@@ -1,0 +1,26 @@
+:root { color-scheme: light; font-family: Arial, sans-serif; }
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #242124;
+  background: #eee9e4;
+}
+.auth-card {
+  width: min(100%, 390px);
+  padding: 32px 24px;
+  border: 1px solid #d8d2cc;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(36, 33, 36, 0.14);
+  text-align: center;
+}
+h1 { margin: 0 0 14px; font-size: 26px; }
+.intro { margin: 0 0 24px; font-size: 18px; }
+#google-button-container { min-height: 44px; display: flex; justify-content: center; }
+#status { min-height: 20px; margin: 18px 0 0; font-size: 14px; }
+#status.error { color: #a12622; }
+.cancel-note { margin: 16px 0 0; color: #666; font-size: 13px; }
