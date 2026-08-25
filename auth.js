@@ -115,6 +115,12 @@
     setStatus("Google sign-in is unavailable right now.", true);
   }
 
+  var gisClient = document.querySelector("#google-gis-client");
+  if (gisClient) {
+    gisClient.addEventListener("load", onGisLoaded);
+    gisClient.addEventListener("error", onGisLoadFailed);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     diagnostic("Loaded", true);
     if (!configuration()) {
@@ -124,8 +130,4 @@
     }
   });
 
-  window.GoogleAuthHelper = {
-    onGisLoaded: onGisLoaded,
-    onGisLoadFailed: onGisLoadFailed
-  };
 }());
