@@ -2,6 +2,6 @@
 window.GOOGLE_AUTH_CONFIG = Object.freeze({
   clientId: "224112490794-72mu6he9gdml6kr92vkse3oqnn8vhqs5.apps.googleusercontent.com",
   allowedOpenerOrigins: Object.freeze([
-    "https://html-classic.itch.zone/html/18961378/index.html?v=1787704346"
+    "https://html-classic.itch.zone"
   ])
 });
