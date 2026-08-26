@@ -6,19 +6,23 @@ Services rendered button and returns the resulting Google ID token directly to
 the specific opener window with `postMessage`. It does not store credentials
 and does not require a backend or client secret.
 
-## Configure
+## Production configuration
 
-1. Deploy this directory to one stable HTTPS origin. Do not use a changing itch
-   upload URL.
-2. In `config.js`, set `clientId` to the public Google OAuth Web Application
-   client ID and replace `allowedOpenerOrigins` with the exact live itch iframe
-   document origin or origins.
-3. In the Unity WebGL template's `google-popup-config.js`, set `helperUrl` to
-   the deployed helper URL and `allowedHelperOrigins` to its exact origin.
-4. Add only the stable helper origin (scheme plus hostname and optional port,
+The popup helper is permanently hosted at
+`https://benlen110.github.io/google-auth-helper/`. The Unity WebGL template
+allows its exact origin, `https://benlen110.github.io`, and the helper allows
+the itch iframe origin, `https://html-classic.itch.zone`.
+
+Validation intentionally compares origins only. It does not depend on an itch
+`/html/<build-id>/` path, `index.html`, or query string, so future itch uploads
+do not require Google popup configuration changes while the iframe remains on
+`https://html-classic.itch.zone`.
+
+1. Keep `clientId` set to the public Google OAuth Web Application client ID.
+2. Add only the stable helper origin (scheme plus hostname and optional port,
    with no path) to the Google Cloud OAuth client's Authorized JavaScript
    Origins.
-5. Configure that same Web Application client ID for the Google provider in
+3. Configure that same Web Application client ID for the Google provider in
    Unity Authentication's `production` environment.
 
 No Google redirect URI is required by this GIS rendered-button callback flow.
