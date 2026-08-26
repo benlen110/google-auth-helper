@@ -27,8 +27,8 @@
       ? config.allowedOpenerOrigins
       : [];
     var validState = /^[A-Za-z0-9_-]{43}$/.test(expectedState);
-    var validIntent = intent === "SignInExistingOrCreate" ||
-      intent === "LinkCurrentGuest";
+    var validIntent = intent === "SignInExisting" ||
+      intent === "LinkCurrentPlayer";
     var originAllowed = allowedOrigins.indexOf(openerOrigin) >= 0 &&
       !isPlaceholder(openerOrigin);
     var clientConfigured = !isPlaceholder(config.clientId);
@@ -103,7 +103,7 @@
       type: "standard",
       theme: "outline",
       size: "large",
-      text: "continue_with",
+      text: "signin_with",
       shape: "rectangular",
       width: 320
     });
